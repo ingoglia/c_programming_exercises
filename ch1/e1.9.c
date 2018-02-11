@@ -5,16 +5,19 @@ int main(){
    int blank;
    blank = 0;
    
-   c = getchar();
 /* replace each string of one or more blanks by a single blank. */
-   while (c != EOF){
-      if (c == " ")
-         blank++
-         if (blank > 1)           
-           blank = 1;
-           putchar("");
-      else if ( c != " ")
+   while ((c = getchar()) != EOF){
+      if ((c == ' ') && (blank < 1)){
+         putchar(' ');
+         ++blank;
+      }  
+      else if ((c == ' ') && (blank > 1)){    
+            --blank;
+            putchar('\0');
+      }
+      if ( c != ' '){
          blank = 0;
-         putchar(c);       
+         putchar(c); 
+      }      
    };
 }
