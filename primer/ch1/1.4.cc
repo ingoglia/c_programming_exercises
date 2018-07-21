@@ -5,5 +5,6 @@ int main(void)
 
   s = 56;
 	printf("There are %d weeks in a year.\n", s);
+  printf("What?\nNo/nfish?\n");
   return 0;
 } 
